@@ -57,18 +57,18 @@
                             // by checking if the number given has only digits and format symbols
                             if ((preg_match("/^[\d\+\-\(\) ]+$/", $number)) && (strlen($number) > 9)){
                                 // Initiate a new outbound call
-                        $call = $client->
+                            $call = $client->
                             account->calls->create(
                             // Step 4: Change the 'To' number below to whatever number you'd like 
-                            // to call.
+                            // to call. 
                             $number,
 
                             // Step 5: Change the 'From' number below to be a valid Twilio number 
-                            // that you've purchased or verified with Twilio.
-                            "+19782917751",
+                            // that you've purchased or verified with Twilio. Set in config.php.
+                            $FromNumber,
 
-                            // Step 6: Set the URL Twilio will request when the call is answered.
-                            array("url" => "http://www.callyouishmael.com/ishmael.php", "timeout" => "10")
+                            // Step 6: Set the URL Twilio will request when the call is answered. Set in config.php.
+                            array("url" => $CallURL, "timeout" => "10")
                         );
                         echo "
                             <div class='alert alert-success' role='alert'> <strong>Started call with</strong>
@@ -106,7 +106,8 @@
                     </div>
                     <div class="modal-body">
                     <p>Call You Ishamel is a service that brings Moby Dick directly to your phone!  Through the power of text to speech technology, you can now experience Melville's classic novel no matter your location! Just enter your phone number and Call You Ishmael will call <strong>you</strong>!</p>
-                    <small class="copyright"><a href="mailto:creinhardt+ishmael@gmail.com">Copyright 2017 Chris Reinhardt</a></small>
+                    <p>I set this up as an excuse to get familiar with the <a href="https://www.twilio.com">Twilio</a> API.  Feel free to contribute or fork this project <a href="https://github.com/cjreinhardt/callyouishmael.com/">at GitHub</a>!</p>
+                    <small class="copyright"><a href="https://www.creinhardt.com">A dumb project by Chris Reinhardt</a></small>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
