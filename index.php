@@ -43,9 +43,8 @@
                 require __DIR__ . "/twilio-php-master/Twilio/autoload.php";
                 use Twilio\Rest\Client;
                 
-                // Step 2: Set our AccountSid and AuthToken from https://twilio.com/console
-                $AccountSid = "AC5515a85d9183f7e582817089e52e2040";
-                $AuthToken = "a4c7469d91204885152689c8c332f756";
+                // Step 2: Set our AccountSid and AuthToken from https://twilio.com/console. This is now included via config.php
+               require 'config.php';
 
                 // Step 3: Instantiate a new Twilio Rest Client
                 $client = new Client($AccountSid, $AuthToken);
